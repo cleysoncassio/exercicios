@@ -130,4 +130,16 @@ Calcule e mostre o total do seu salário no referido mês, sabendo-se que são d
     Obs.: Salário Bruto - Descontos = Salário Líquido'''
 
 salario = float(input('quanto você ganha por hora?'))
-horas = float(input('quantas horas você trabalha por semana'))
+horas = float(input('quantas horas você trabalha por semana?'))
+calculo = horas * salario * 4
+IR = calculo / 100 *11
+INSS = calculo /100 * 8
+Sindicato = calculo /100 * 5
+Salario_liquido = calculo - IR - INSS - Sindicato
+print(f'Salário bruto relativo ao mês é de: R$ {calculo}')
+print(f'desconto IR = R$ {IR}')
+print(f'desconto INSS = R$ {INSS}')
+print(f'desconto Sindicato = R$ {Sindicato}')
+print(f'total de descontos é de: R${ IR + INSS + Sindicato}')
+print(f'Salário líquido é de: R$ {Salario_liquido}')
+
