@@ -143,3 +143,41 @@ print(f'desconto Sindicato = R$ {Sindicato}')
 print(f'total de descontos é de: R${ IR + INSS + Sindicato}')
 print(f'Salário líquido é de: R$ {Salario_liquido}')
 
+'''Faça um programa para uma loja de tintas. 
+O programa deverá pedir o tamanho em metros quadrados da área a ser pintada.
+Considere que a cobertura da tinta é de 1 litro para cada 3 metros quadrados e que a tinta é vendida 
+em latas de 18 litros, que custam R$ 80,00. 
+Informe ao usuário a quantidades de latas de tinta a serem compradas e o preço total.'''
+
+area = float(input('digite o tamanho da área em m2'))
+cobertura = area/18
+valor_lata = 80.00
+quantidade_latas = area / 18
+if area >= 54:
+    print(f'você tem que comprar:{round(cobertura)} galões e vai pagar R$ {round(quantidade_latas-0.4) * valor_lata} pelas tintas')
+elif area <= area:
+    print(f'você precisa comprar: {round(quantidade_latas)}galão(oes)')
+
+"""Faça um Programa para uma loja de tintas. O programa deverá pedir o tamanho em metros quadrados da área a ser 
+pintada. Considere que a cobertura da tinta é de 1 litro para cada 6 metros quadrados e que a tinta é vendida em latas 
+de 18 litros, que custam R$ 80,00 ou em galões de 3,6 litros, que custam R$ 25,00.
+
+    Informe ao usuário as quantidades de tinta a serem compradas e os respectivos preços em 3 situações:
+    comprar apenas latas de 18 litros;
+    comprar apenas galões de 3,6 litros;
+    misturar latas e galões, de forma que o desperdício de tinta seja menor. Acrescente 10% de folga e sempre arredonde 
+    os valores para cima, isto é, considere latas cheias."""
+
+area = float(input('digite o tamanho da área em m2'))
+cobertura_latao = area / 6
+cobertura_galao = area / 6
+latao = 18
+galao = 3.6
+valor_latao = 80.00
+valor_galao = 25.00
+folga = (galao * 10 / 100)
+if area <= 21.6:
+    print(f' você precisa comprar:{round(galao+folga)} litros  de tinta')
+elif area >= 108:
+    print(f' Você precisa comprar:{round(latao+folga)} galoes de 18 litros')
+
