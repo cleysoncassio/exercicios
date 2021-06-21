@@ -169,15 +169,26 @@ de 18 litros, que custam R$ 80,00 ou em galões de 3,6 litros, que custam R$ 25,
     os valores para cima, isto é, considere latas cheias."""
 
 area = float(input('digite o tamanho da área em m2'))
-cobertura_latao = area / 6
-cobertura_galao = area / 6
-latao = 18
-galao = 3.6
+cobertura_latao = 108
+cobertura_galao = 21.6
+cobertura_mista = 129.6
+cobertura_mista2 = 84.6
 valor_latao = 80.00
 valor_galao = 25.00
-folga = (galao * 10 / 100)
-if area <= 21.6:
-    print(f' você precisa comprar:{round(galao+folga)} litros  de tinta')
-elif area >= 108:
-    print(f' Você precisa comprar:{round(latao+folga)} galoes de 18 litros')
+folga = 1.1
+mistura_latao = int(area/cobertura_latao)
+mistura_galao = int(area/cobertura_mista2)
+
+if area <= cobertura_galao:
+    print(f' você precisa comprar:{round(area /cobertura_galao + folga)} galão (oes) de 3.6 litros de tinta')
+    print(f'Você pagará um valor total de R$: {round(area/cobertura_galao + folga ) * 25.00} reais')
+if area < cobertura_mista:
+    print(f' você precisa comprar:{round(area /cobertura_latao + folga)} latão (oes) de 18 litros de tinta')
+    print(f'Você pagará um valor total de R$: {round(area/cobertura_latao + folga) * 80.00} reais')
+
+elif area >= cobertura_mista:
+    print(f'Em {round(area/cobertura_latao)} latões de 18lt você pagará R$:{round(area / cobertura_latao )* 80.00}')
+    print(f'Em {round(area/cobertura_galao)} galões de 3.6lt você pagará R$:{round(area / cobertura_galao )* 25.00}')
+    print(f'Comprando {int(mistura_latao)} latões e {int(area/cobertura_mista2)} galoes você pagará R$: '
+          f'{(mistura_latao* valor_latao) + (mistura_galao* valor_galao)}')
 
